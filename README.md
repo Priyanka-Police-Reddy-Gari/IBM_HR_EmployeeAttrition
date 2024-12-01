@@ -40,7 +40,7 @@ The data model is in 3NF:
 
 Any column's value can be derived from the primary key. 
 Entity-Relationship Diagram
- 
+![image](https://github.com/user-attachments/assets/b87397ac-fcbe-4b26-be30-2a2ec0519e1a)
 
 
 
@@ -62,26 +62,43 @@ Assumptions/Notes About Data Set
 
 
 Screen shot of Physical Database objects
+![image](https://github.com/user-attachments/assets/b44b8dc1-1c53-4f64-81a9-5dab5e37c4bb)
+
  
 
 Data in the Database
-Table Number	Table Name	Primary Key	Foreign Key	# of Rows in Table
-1	Employee	Employee_Number	Travel_id	1470
-2	Experience	Employee_Number	PerformanceRating	1470
-3	Education	Employee_Number	Education	1470
-4	Salary	Employee_Number	-	1470
-5	Satisfaction	Employee_Number	Worklifebalance
-RelationshipSatisfaction
-JobSatisfaction
-EnvironmentSatisfaction
-JobInvolvement	1470
-6	Job Details	Employee_Number	Department_id
-JobRole_id	1470
-7	PerformanceRating_index	PerformanceRating	-	4
-8	Worklifebalance	Worklifebalance	-	4
-9	Education_index	Education	-	5
-10	Satisfaction_index  	Satisfaction_id	-	4
-11	Travel_index	Travel_id	-	3
-12	Department	Department_id	-	3
-13	Job Role	JobRole_id	-	9
+![image](https://github.com/user-attachments/assets/7655cecd-37af-4163-b365-8c0e6430439e)
+![image](https://github.com/user-attachments/assets/8ca93240-e3fe-4831-948e-8e9125ca18b7)
+
+Data Review for MongoDB 
+Assumptions/Notes About Data Collections, Attributes and Relationships between 
+Collections 
+Data is loaded into Mongo using Compass and visualized using Compass and Mongo Shell. 
+The raw dataset is loaded into Mongo Server because it is capable of handling unstructured 
+data too. This is now also used to compare result sets fetched from Mongo with SQL result sets. 
+The collection for the raw dataset is named IBM. 
+Four index tables are added as collections to the database, to provide indexes for values used in 
+the raw data collection IBM. 
+The satisfaction_id collection a common index for several columns in the IBM collection, such 
+as EnvironmentSatisfaction, JobInvolvement, JobSatisfaction, PerformanceRating, and 
+RelationshipSatisfaction. 
+Execution of queries is done through the Mongo Shell.
+
+Physical Mongo Database 
+Assumptions/Notes About Data Set 
+1. The dataset which is originally in csv format is loaded into the mongoDB with the 
+database name as project and collection named as IBM.   
+2. No normalization: This holds all the attributes , unlike SQL.   
+3. The databse still has indexes for certain fields as four separate collections, which are 
+there for reference reasons. This makes a total of 5 collections in the database. 
+4. All the Collections are present as reference collections instead of embedded collections 
+as there is no use of the collection other than IBM to solve the problems of this project.
+
+Screen shot of Physical Database objects (Database, Collections and Attributes) 
+ ![image](https://github.com/user-attachments/assets/abda170d-813f-43f8-b72f-0d4dba136259)
+
+Data in the Database
+![image](https://github.com/user-attachments/assets/3a7f47f0-50e3-46ab-aa2b-4c4854f08fd9)
+
+
 
